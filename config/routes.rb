@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :kids
-  
+  resources :children
+
   get 'welcome/home'
 
   root 'welcome#home'
