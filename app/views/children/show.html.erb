@@ -1,0 +1,12 @@
+<h1><%= @child.name %>'s Status</h1>
+
+<p><strong>Current Color:</strong></p>
+<p><%= @child.color %></p>
+<br>
+<br>
+<p><strong>Current Screentime:</strong></p>
+<p><%= @child.screentime %></p>
+<br>
+<br>
+<p><%= link_to 'Edit', edit_child_path(@child) %></p>
+<p><%= link_to 'Home', welcome_home_path %></p>

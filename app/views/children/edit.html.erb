@@ -1,6 +1,6 @@
-<h1>Add Child</h1>
+<h1>Edit <%= @child.name %></h1>
 
-<%= form_for :child, url: children_path do |f| %>
+<%= form_for @child, method: :patch do |f| %>
 
 <% if @child.errors.any? %>
   <div id="error_explanation">
@@ -25,6 +25,7 @@
   </p>
 
   <p>
-    <%= link_to 'Cancel', welcome_home_path %>
+    <%= link_to 'Cancel', children_path %>
   </p>
+
   <% end %>
