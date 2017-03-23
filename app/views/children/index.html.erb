@@ -1,22 +1,24 @@
 <h1>Your Children</h1>
 
 <table>
+  <% @children.order(:name).each do |child| %>
   <tr>
-    <th>Name:</th>
-    <th>Current Color:</th>
-    <th>Screentime:</th>
-    <th colspan="3"></th>
-  </tr>
+    <td class="list_description">
+      <dl>
+        <dt><%= child.name %>                     </dt>
+        <dd>Current Color: <%= child.color %>     </dd>
+        <dd>Screentime: <%= child.screentime %>   </dd>
+      </dl>
 
-  <%= @children.each do |child| %>
-      <tr>
-        <td><%= child.name %></td>
-        <td><%= child.color %></td>
-        <td><%= child.screentime %></td>
-        <td><%= link_to 'View', child_path(child) %></td>
-        <td><%= link_to 'Delete', child_path(child),
-                method: :delete,
-                data: {confirm: 'Are you sure?'} %></td>
-      </tr>
-  <% end %>
+      <td class="list_actions">
+        <%= link_to 'View', child %><br/>
+        <%= link_to 'Edit', edit_child_path(child) %><br/>
+        <%= link_to 'Delete', child, method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+    <% end %>
 </table>
+<br/>
+
+<%= link_to 'Add Child', new_child_path %>

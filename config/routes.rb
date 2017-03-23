@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :children
+  resources :children do
+    put 'color_up' => :color_up
+    put 'color_down' => :color_down
+  end
 
-  get 'welcome/home'
-
-  root 'welcome#home'
+  root 'children#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

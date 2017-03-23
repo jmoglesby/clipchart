@@ -1,12 +1,7 @@
 <h1><%= @child.name %>'s Status</h1>
 
-<p><strong>Current Color:</strong></p>
-<p><%= @child.color %></p>
-<br>
-<br>
-<p><strong>Current Screentime:</strong></p>
-<p><%= @child.screentime %></p>
-<br>
-<br>
+<%= button_to "UP", child_color_up_path(@child), method: :put %>
+<%= button_to 'DOWN', child_color_down_path(@child), method: :put %>
+
 <p><%= link_to 'Edit', edit_child_path(@child) %></p>
-<p><%= link_to 'Home', welcome_home_path %></p>
+<p><%= link_to 'Home', children_path %></p>
