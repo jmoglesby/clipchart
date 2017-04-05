@@ -43,19 +43,37 @@ class ChildrenController < ApplicationController
   end
 
   def color_up
-    @child = Child.find(params[:child_id])
-    @child.color = Child.colors[@child.color] + 1
-    @child.save
+    @child = Child.find(params[:id])
+    unless Child.colors[@child.color] == 6
+      @child.color = Child.colors[@child.color] + 1
+      @child.save
+    end
 
     redirect_to @child
   end
 
   def color_down
-    @child = Child.find(params[:child_id])
-    @child.color = Child.colors[@child.color] - 1
-    @child.save
+    @child = Child.find(params[:id])
+    unless Child.colors[@child.color] == 0
+      @child.color = Child.colors[@child.color] - 1
+      @child.save
+    end
 
     redirect_to @child
+  end
+
+  def redeem_screentime
+    @child = Child.find(params[:id])
+    @time_redeemed = gets
+
+    @child.screentime = @child.screentime - @time_redeemed
+    @child.save
+  end
+
+  def daily_reset_and_distribution
+    Child.daily_reset_and_distribution
+
+    redirect_to root_path
   end
 
   private

@@ -1,5 +1,7 @@
 <h1>Your Children</h1>
 
+<h2>Money Pool: $<%= MoneyPool.current_balance %></h2>
+
 <table>
   <% @children.order(:name).each do |child| %>
   <tr>
@@ -21,4 +23,5 @@
 </table>
 <br/>
 
-<%= link_to 'Add Child', new_child_path %>
+<%= link_to 'Add Child', new_child_path %><br/>
+<%= button_to 'Daily Reset', daily_reset_and_distribution_children_path, data: {confirm: "Are you sure you want to reset?"} %>

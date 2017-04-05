@@ -1,0 +1,2 @@
+class MoneyPoolController < ApplicationController
+end

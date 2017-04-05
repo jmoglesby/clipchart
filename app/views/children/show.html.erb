@@ -1,7 +1,7 @@
 <h1><%= @child.name %>'s Status</h1>
 
-<%= button_to "UP", child_color_up_path(@child), method: :put %>
-<%= button_to 'DOWN', child_color_down_path(@child), method: :put %>
+<%= button_to "UP", color_up_child_path(@child), method: :put %>
+<%= button_to 'DOWN', color_down_child_path(@child), method: :put %>
 
 <p><%= link_to 'Edit', edit_child_path(@child) %></p>
 <p><%= link_to 'Home', children_path %></p>
