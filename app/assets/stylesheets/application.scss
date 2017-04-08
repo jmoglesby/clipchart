@@ -12,18 +12,28 @@
  *
  */
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
 
-#banner {
-  position: relative;
-  min-height: 60px;
-  background: white;
-  padding: 10px;
-  border-bottom: 2px solid;
-  font: 80px/50px "Josefin Sans", sans-serif;
-  color: #260751;
+ .jumbotron {
+     background-color: #f1f1f1; /* White */
+     color: #400080;
+     border-bottom: 2px;
+     border-bottom-color: purple;
+ }
+
+ .container-fluid {
+   padding: 50px, 50px;
+   text-align: center;
+ }
+
+ .colored-row {
+  background-color: #f4f4f4;
   text-align: center;
-}
+ }
+
+ #main a:link, #main a:visited, #main a:hover, #main a:active,  {
+     text-decoration:none; 
+ }

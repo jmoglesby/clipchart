@@ -1,27 +1,39 @@
-<h1>Your Children</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clipchart!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-<h2>Money Pool: $<%= MoneyPool.current_balance %></h2>
+  <body>
+    <h4>Money Pool: $<%= MoneyPool.current_balance %></h4>
 
-<table>
-  <% @children.order(:name).each do |child| %>
-  <tr>
-    <td class="list_description">
-      <dl>
-        <dt><%= child.name %>                     </dt>
-        <dd>Current Color: <%= child.color %>     </dd>
-        <dd>Screentime: <%= child.screentime %>   </dd>
-      </dl>
-
-      <td class="list_actions">
-        <%= link_to 'View', child %><br/>
-        <%= link_to 'Edit', edit_child_path(child) %><br/>
-        <%= link_to 'Delete', child, method: :delete,
-                    data: { confirm: 'Are you sure?' } %>
-      </td>
-    </tr>
+    <% @children.order(:name).each do |child| %>
+      <div class="colored-row">
+        <div class="col-sm-12", id="main">
+          <h2>
+            <%= link_to "#{child.name}", child_path(child) %>
+            <%= button_to color_up_child_path(child),
+                class: 'btn btn-default btn-lg',method: :put do %>
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            <% end %>
+            <%= button_to color_down_child_path(child),
+                class: 'btn btn-default btn-lg',method: :put do %>
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            <% end %>
+          </h2>
+        </div>
+      </div>
     <% end %>
-</table>
-<br/>
+    <br/>
 
-<%= link_to 'Add Child', new_child_path %><br/>
-<%= button_to 'Daily Reset', daily_reset_and_distribution_children_path, data: {confirm: "Are you sure you want to reset?"} %>
+    <%= link_to 'Add Child', new_child_path %><br/>
+    <%= button_to 'Daily Reset', daily_reset_and_distribution_children_path, data: {confirm: "Are you sure you want to reset?"} %>
+  </body>
