@@ -49,7 +49,7 @@ class ChildrenController < ApplicationController
       @child.save
     end
 
-    redirect_to @child
+    redirect_to children_path
   end
 
   def color_down
@@ -59,7 +59,7 @@ class ChildrenController < ApplicationController
       @child.save
     end
 
-    redirect_to @child
+    redirect_to children_path
   end
 
   def redeem_screentime

@@ -2,33 +2,33 @@ class Child < ApplicationRecord
   validates :name, presence: true,
                     length: {minimum: 2}
 
-  enum color: [ :Red, :Orange, :Yellow, :Green, :Pink, :Blue, :Purple ]
+  enum color: [ :red, :orange, :yellow, :green, :pink, :blue, :purple ]
 
   def self.daily_reset_and_distribution
 
     Child.all.each do |child|
       case child.color
-        when "Red"
+        when "red"
           MoneyPool.adjust_current_balance_cents -75
-        when "Orange"
+        when "orange"
           MoneyPool.adjust_current_balance_cents -50
-        when "Yellow"
+        when "yellow"
           MoneyPool.adjust_current_balance_cents -25
-        when "Green"
+        when "green"
           child.screentime += 5
           MoneyPool.adjust_current_balance_cents 25
-        when "Pink"
+        when "pink"
           child.screentime += 10
           MoneyPool.adjust_current_balance_cents 50
-        when "Blue"
+        when "blue"
           child.screentime += 15
           MoneyPool.adjust_current_balance_cents 75
-        when "Purple"
+        when "purple"
           child.screentime += 20
           MoneyPool.adjust_current_balance_cents 100
       end
 
-      child.color = "Green"
+      child.color = "green"
       child.save
     end
   end

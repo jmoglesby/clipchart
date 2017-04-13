@@ -16,8 +16,12 @@
     <div class="jumbotron text-center">
       <h1>Clipchart!</h1>
     </div>
-    <div class="container-fluid">
+
           <%= yield %>
+
+    <div class="footer text-center">
+      <%= button_to 'Daily Reset', daily_reset_and_distribution_children_path,
+          data: {confirm: "Are you sure you want to reset?"} %>
     </div>
   </body>
 </html>

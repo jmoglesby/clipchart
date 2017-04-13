@@ -13,27 +13,35 @@
   </head>
 
   <body>
-    <h4>Money Pool: $<%= MoneyPool.current_balance %></h4>
+    <div class="container-fluid">
+      <h4>
+        <%= link_to "Money Pool: $#{MoneyPool.current_balance}" %>
+      </h4>
+    </div>
 
     <% @children.order(:name).each do |child| %>
-      <div class="colored-row">
-        <div class="col-sm-12", id="main">
-          <h2>
-            <%= link_to "#{child.name}", child_path(child) %>
-            <%= button_to color_up_child_path(child),
-                class: 'btn btn-default btn-lg',method: :put do %>
-                <span class="glyphicon glyphicon-chevron-up"></span>
-            <% end %>
-            <%= button_to color_down_child_path(child),
-                class: 'btn btn-default btn-lg',method: :put do %>
-                <span class="glyphicon glyphicon-chevron-down"></span>
-            <% end %>
-          </h2>
+      <div class="container-fluid  <%= child.color %>", id="children">
+        <div class="colored-row">
+          <div class="col-xl-8">
+            <h1>
+              <%= link_to "#{child.name}", child_path(child), class:'no-dec-link' %>
+              <div class="btn-group-vertical">
+                <%= link_to color_up_child_path(child), class:'btn btn-default',
+                    method: :put do %>
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                <% end %>
+                <%= link_to color_down_child_path(child), class:'btn btn-default',
+                    method: :put do %>
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                <% end %>
+              </div>
+            </h1>
+          </div>
         </div>
       </div>
     <% end %>
     <br/>
-
-    <%= link_to 'Add Child', new_child_path %><br/>
-    <%= button_to 'Daily Reset', daily_reset_and_distribution_children_path, data: {confirm: "Are you sure you want to reset?"} %>
+    <div class="container-fluid">
+      <%= link_to 'Add Child', new_child_path %>
+    </div>
   </body>
