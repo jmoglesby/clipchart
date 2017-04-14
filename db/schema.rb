@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324225434) do
+ActiveRecord::Schema.define(version: 20170414183902) do
 
   create_table "children", force: :cascade do |t|
     t.text     "name"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170324225434) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "color",      default: 3, null: false
+    t.text     "goal"
   end
 
   create_table "money_pools", force: :cascade do |t|

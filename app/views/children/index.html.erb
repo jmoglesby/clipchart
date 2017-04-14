@@ -13,18 +13,13 @@
   </head>
 
   <body>
-    <div class="container-fluid">
-      <h4>
-        <%= link_to "Money Pool: $#{MoneyPool.current_balance}" %>
-      </h4>
-    </div>
 
     <% @children.order(:name).each do |child| %>
-      <div class="container-fluid  <%= child.color %>", id="children">
+      <div class="container-fluid  childbox <%= child.color %>">
         <div class="colored-row">
           <div class="col-xl-8">
-            <h1>
-              <%= link_to "#{child.name}", child_path(child), class:'no-dec-link' %>
+            <h1 class="<%= child.color %>">
+              <%= link_to "#{child.name}", child_path(child), class: child.color %>
               <div class="btn-group-vertical">
                 <%= link_to color_up_child_path(child), class:'btn btn-default',
                     method: :put do %>
@@ -42,6 +37,6 @@
     <% end %>
     <br/>
     <div class="container-fluid">
-      <%= link_to 'Add Child', new_child_path %>
+      <%= link_to 'Add Child', new_child_path, class:'btn btn-block btn-lg btn-default' %>
     </div>
   </body>

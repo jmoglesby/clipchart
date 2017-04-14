@@ -1,6 +1,28 @@
-<h1><%= @child.name %>'s Status</h1>
+<!DOCTYPE html>
+<html>
 
-<h3><%= @child.color %></h3>
+  <head>
+    <title>Clipchart!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-<p><%= link_to 'Edit', edit_child_path(@child) %></p>
-<p><%= link_to 'Home', children_path %></p>
+  <body>
+
+    <div class="container-fluid">
+      <h1><%= @child.name %>'s Status</h1>
+      <p>Goal: <%= @child.goal %></p>
+      <h3>Screentime: <%= @child.screentime %> minutes</h3>
+      <p><%= link_to 'Edit', edit_child_path(@child) %></p>
+      <p><%= link_to 'Home', children_path %></p>
+    </div>
+
+  </body>
+
+</html>

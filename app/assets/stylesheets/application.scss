@@ -16,24 +16,56 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ .body1 {
+   background: #3030303;
+ }
+
+ body.children {
+   background: #3030303;
+ }
 
  .jumbotron {
-     background-color: #f0f0f0;
-     color: #400080;
-     border-bottom: 2px;
-     border-bottom-color: purple;
+    background: #303030;
+    color: #9B2AF8;
+    margin: 0%;
+    padding: 4%;
+
+    a.jumbotron:link, a.jumbotron:visited, a.jumbotron:active {
+      text-decoration: none;
+      color: #9B2AF8;
+    }
+    a.jumbotron:hover {
+      text-decoration: none;
+      color: #9B2AF8;
+    }
  }
 
  .container-fluid {
    text-align: center;
-   margin: 0% 1%;
+   margin: 0%;
+   background: #303030;
+   height: 100%;
  }
 
- #children {
-    margin: 0% 4%;
-    border: 2px solid;
-    border-color: white;
-    border-radius: 25px;
+ .pre-scrollable {
+   margin: 0%;
+   padding: 2% 8%;
+   background: #303030;
+ }
+
+ #moneypool {
+   background: #9B2AF8;
+   color: white;
+   margin: 0%;
+   padding: .5%;
+ }
+
+ .childbox {
+   margin: 1% 0%;
+   padding: 2% 8%;
+   border: 12px solid;
+   border-radius: 25px;
+   background-color: #303030;
   }
 
  .col-xl-8 {
@@ -42,50 +74,116 @@
  }
 
  .colored-row {
-  background-color: inherit;
+  background-color: #303030;
   text-align: center;
  }
 
  a.no-dec-link:link, a.no-dec-link:visited, a.no-dec-link:active,  {
-   text-decoration:none;
-   color: #fff;
+   text-decoration: none;
+   color: #303030;
  }
 
  a.no-dec-link:hover {
-   color: #400080;
+   color: #f1f1f1;
  }
 
  .reset {
  }
 
  .red {
-   background-color: red;
+   border-color: #E82A2A;
+
+   a.red:link, a.red:visited, a.red:active, {
+     text-decoration:none;
+     color: #E82A2A;
+   }
+   a.red:hover {
+     text-decoration: none;
+     color: #909090;
+   }
  }
 
  .orange {
-   background-color: orange;
- }
+   border-color: #F97F05;
+
+    a.orange:link, a.orange:visited, a.orange:active, {
+      text-decoration:none;
+      color: #F97F05;
+    }
+    a.orange:hover {
+      text-decoration: none;
+      color: #909090;
+     }
+  }
 
  .yellow {
-   background-color: yellow;
+   border-color: #E7E30D;
+
+    a.yellow:link, a.yellow:visited, a.yellow:active, {
+      text-decoration:none;
+      color: #E7E30D;
+    }
+    a.yellow:hover {
+      text-decoration: none;
+      color: #909090;
+    }
  }
 
  .green {
-   background-color: green;
+   border-color: #0BD501;
+   a.green:link, a.green:visited, a.green:active, {
+     text-decoration:none;
+     color: #0BD501;
+   }
+   a.green:hover {
+     text-decoration: none;
+     color: #909090;
+   }
  }
 
  .pink {
-   background-color: pink;
+   border-color: #E763A5;
+   a.pink:link, a.pink:visited, a.pink:active, {
+     text-decoration:none;
+     color: #E763A5;
+   }
+   a.pink:hover {
+     text-decoration: none;
+     color: #909090;
+   }
  }
 
  .blue {
-   background-color: blue;
+   border-color: #1169F7;
+   a.blue:link, a.blue:visited, a.blue:active, {
+     text-decoration:none;
+     color: #1169F7;
+   }
+   a.blue:hover {
+     text-decoration: none;
+     color: #909090;
+   }
  }
 
  .purple {
-   background-color: purple;
+   border-color: #9B2AF8;
+   a.purple:link, a.purple:visited, a.purple:active, {
+     text-decoration:none;
+     color: #9B2AF8;
+   }
+   a.purple:hover {
+     text-decoration: none;
+     color: #909090;
+   }
  }
 
  .footer {
-   margin: 1%;
+   margin: 1% 0% 0% 0%;
+   padding: 3%;
+   background: #9B2AF8;
+   color: white;
+   position: fixed;
+   left:0px;
+   bottom:0px;
+   width:100%;
  }
