@@ -16,48 +16,60 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- .body1 {
+ html,body {
+   height: 100vh;
+   margin: 0 auto;
+   padding-top: 00px;
+ }
+
+ .children {
    background: #3030303;
  }
 
- body.children {
-   background: #3030303;
- }
-
- .jumbotron {
-    background: #303030;
-    color: #9B2AF8;
-    margin: 0%;
-    padding: 4%;
-
-    a.jumbotron:link, a.jumbotron:visited, a.jumbotron:active {
+ nav {
+   position: absolute;
+    a.navbar:link, a.navbar:visited, a.navbar:active {
       text-decoration: none;
       color: #9B2AF8;
     }
-    a.jumbotron:hover {
+    a.navbar:hover {
       text-decoration: none;
       color: #9B2AF8;
     }
  }
 
- .container-fluid {
+ .container {
    text-align: center;
+ }
+
+ #content {
+   text-align: center;
+   color: #f1f1f1;
+   height: 100%;
    margin: 0%;
    background: #303030;
-   height: 100%;
+   position: fixed;
+   top: 71px;
+   width: 100%;
+ }
+
+ .form {
+   color: #BABABA;
  }
 
  .pre-scrollable {
    margin: 0%;
    padding: 2% 8%;
    background: #303030;
+   min-height: 100vh;
  }
 
  #moneypool {
-   background: #9B2AF8;
+   background: #BABABA;
    color: white;
    margin: 0%;
    padding: .5%;
+   width: 100%;
  }
 
  .childbox {
@@ -66,16 +78,19 @@
    border: 12px solid;
    border-radius: 25px;
    background-color: #303030;
+   vertical-align: middle;
   }
 
  .col-xl-8 {
    padding: .5%;
    margin: .5%;
+   vertical-align: middle;
  }
 
  .colored-row {
   background-color: #303030;
   text-align: center;
+  vertical-align: middle;
  }
 
  a.no-dec-link:link, a.no-dec-link:visited, a.no-dec-link:active,  {
@@ -178,12 +193,13 @@
  }
 
  .footer {
-   margin: 1% 0% 0% 0%;
+   margin: 0% 0% 0% 0%;
    padding: 3%;
-   background: #9B2AF8;
+   background: #BABABA;
    color: white;
    position: fixed;
    left:0px;
    bottom:0px;
    width:100%;
+   height: 75px;
  }
