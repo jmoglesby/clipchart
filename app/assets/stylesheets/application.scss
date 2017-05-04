@@ -16,7 +16,15 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- html,body {
+* {
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid rgba(5, 0, 0, 0.4); */
+}
+
+  html,body {
    height: 100vh;
    margin: 0 auto;
    padding-top: 00px;
@@ -27,7 +35,8 @@
  }
 
  nav {
-   position: absolute;
+   background: hsla(0, 0%, 9%, 0.80);
+   position: fixed;
     a.navbar:link, a.navbar:visited, a.navbar:active {
       text-decoration: none;
       color: #9B2AF8;
@@ -45,12 +54,12 @@
  #content {
    text-align: center;
    color: #f1f1f1;
-   height: 100%;
    margin: 0%;
+   margin-top: 50px;
    background: #303030;
-   position: fixed;
-   top: 71px;
    width: 100%;
+   padding-bottom: 100px;
+   padding-top: 30px;
  }
 
  .form {
@@ -195,7 +204,7 @@
  .footer {
    margin: 0% 0% 0% 0%;
    padding: 3%;
-   background: #BABABA;
+   background: hsla(0, 0%, 9%, 0.95);
    color: white;
    position: fixed;
    left:0px;
