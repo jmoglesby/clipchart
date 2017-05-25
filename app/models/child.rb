@@ -8,27 +8,27 @@ class Child < ApplicationRecord
 
     Child.all.each do |child|
       case child.color
-        when "red"
+        when 'red'
           MoneyPool.adjust_current_balance_cents -75
-        when "orange"
+        when 'orange'
           MoneyPool.adjust_current_balance_cents -50
-        when "yellow"
+        when 'yellow'
           MoneyPool.adjust_current_balance_cents -25
-        when "green"
+        when 'green'
           child.screentime += 5
           MoneyPool.adjust_current_balance_cents 25
-        when "pink"
+        when 'pink'
           child.screentime += 10
           MoneyPool.adjust_current_balance_cents 50
-        when "blue"
+        when 'blue'
           child.screentime += 15
           MoneyPool.adjust_current_balance_cents 75
-        when "purple"
+        when 'purple'
           child.screentime += 20
           MoneyPool.adjust_current_balance_cents 100
       end
 
-      child.color = "green"
+      child.color = 'green'
       child.save
     end
   end

@@ -1,28 +1,30 @@
-<% @children.order(:name).each do |child| %>
-  <div class="childbox <%= child.color %>">
-    <div class="colored-row">
-      <div class="col-xl-8">
-        <h1 class="<%= child.color %>">
-          <%= link_to "#{child.name}", child_path(child), class: child.color %>
-          <div class="btn-group">
-            <%= link_to color_up_child_path(child), class:'btn btn-default btn-lg',
-                method: :put do %>
-                <span class="glyphicon glyphicon-chevron-up"></span>
-            <% end %>
-            <%= link_to color_down_child_path(child), class:'btn btn-default btn-lg',
-                method: :put do %>
-                <span class="glyphicon glyphicon-chevron-down"></span>
-            <% end %>
-          </div>
-        </h1>
-        <p>
-          <%= child.goal %>
-        </p>
+<div class="container-fluid pre-scrollable", id="content">
+  <% @children.order(:name).each do |child| %>
+    <div class="childbox <%= child.color %>">
+      <div class="colored-row">
+        <div class="col-xl-8">
+          <h1 class="<%= child.color %>">
+            <%= link_to "#{child.name}", child_path(child), class: child.color %>
+            <div class="btn-group">
+              <%= link_to color_up_child_path(child), class:'btn btn-default btn-lg',
+                  method: :put do %>
+                  <span class="glyphicon glyphicon-chevron-up"></span>
+              <% end %>
+              <%= link_to color_down_child_path(child), class:'btn btn-default btn-lg',
+                  method: :put do %>
+                  <span class="glyphicon glyphicon-chevron-down"></span>
+              <% end %>
+            </div>
+          </h1>
+          <p>
+            <%= child.goal %>
+          </p>
+        </div>
       </div>
     </div>
+  <% end %>
+  <br/>
+  <div class="container-fluid">
+    <%= link_to 'Add Child', new_child_path, class:'btn btn-block btn-lg btn-default' %>
   </div>
-<% end %>
-<br/>
-<div class="container-fluid">
-  <%= link_to 'Add Child', new_child_path, class:'btn btn-block btn-lg btn-default' %>
 </div>

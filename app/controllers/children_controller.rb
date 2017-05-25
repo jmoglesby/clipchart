@@ -64,10 +64,12 @@ class ChildrenController < ApplicationController
 
   def redeem_screentime
     @child = Child.find(params[:id])
-    @time_redeemed = gets
+    @time_redeemed = params[:time_redeemed].to_i
 
     @child.screentime = @child.screentime - @time_redeemed
     @child.save
+
+    redirect_to @child
   end
 
   def daily_reset_and_distribution
@@ -79,7 +81,7 @@ class ChildrenController < ApplicationController
   private
 
   def child_params
-    params.require(:child).permit(:name, :goal)
+    params.require(:child).permit(:name, :goal, :color, :screentime)
   end
 
 end

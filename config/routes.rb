@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     member do
       put :color_up
       put :color_down
+      post :redeem_screentime
     end
     collection do
       post :daily_reset_and_distribution
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
 
   resource :money_pool do
     post :adjust_current_balance_cents
+    post :manual_adjust_current_balance_cents
   end
 
   root 'children#index'
