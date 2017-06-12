@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid form">
   <h1><%= @child.name %>'s Status</h1>
   <p>Goal: <%= @child.goal %></p>
   <h3>Screentime: <%= @child.screentime %> minutes</h3>
@@ -16,7 +16,7 @@
             <h4 class="modal-title">How much screentime was used?</h4>
           </div>
           <div class="modal-body">
-              <%= form.number_field :time_redeemed %>
+              <%= form.number_field :time_redeemed %><p>minutes</p>
           </div>
           <div class="modal-footer">
             <div class="actions">

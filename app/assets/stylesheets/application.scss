@@ -62,8 +62,20 @@
    padding-top: 30px;
  }
 
+ .logout {
+   text-align: right;
+ }
+
  .form {
-   color: #BABABA;
+   background: #303030;
+   color: #f1f1f1;
+   text-align: center;
+   padding-top: 100px;
+   height: 100%;
+ }
+
+ .show {
+   color: #303030;
  }
 
  .pre-scrollable {
@@ -199,6 +211,21 @@
      text-decoration: none;
      color: #909090;
    }
+ }
+
+ .modal-title {
+   text-align: center;
+   color: black;
+ }
+
+ .modal-body {
+   text-align: center;
+   color: black;
+ }
+
+ .modal-footer {
+   text-align: center;
+   color: black;
  }
 
  .footer {

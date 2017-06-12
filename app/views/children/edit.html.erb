@@ -1,36 +1,39 @@
-<h1>Edit <%= @child.name %></h1>
+<div class="container-fluid form">
 
-<%= form_for @child, method: :patch do |f| %>
+  <h1>Edit <%= @child.name %></h1>
 
-<% if @child.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(@child.errors.count, "error") %> prevented this from saving
-    </h2>
-    <ul>
-      <% @child.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+  <%= form_for @child, method: :patch do |f| %>
 
-  <p>
-    <%= f.label :name, 'Name' %><br>
-    <%= f.text_field :name %>
-  </p>
-
-  <p>
-    <%= f.label :goal, 'Goal' %><br>
-    <%= f.text_area :goal %>
-  </p>
-  
-  <p>
-    <%= f.submit %>
-  </p>
-
-  <p>
-    <%= link_to 'Cancel', children_path %>
-  </p>
-
+  <% if @child.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@child.errors.count, "error") %> prevented this from saving
+      </h2>
+      <ul>
+        <% @child.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
+
+    <p>
+      <%= f.label :name, 'Name' %><br>
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+      <%= f.label :goal, 'Goal' %><br>
+      <%= f.text_area :goal %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+
+    <p>
+      <%= link_to 'Cancel', children_path %>
+    </p>
+
+    <% end %>
+</div>

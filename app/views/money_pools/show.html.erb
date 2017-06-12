@@ -1,0 +1,17 @@
+<h1>Spend From Money Pool</h1>
+</br>
+<h3>
+  Current Balance: <%= number_to_currency(MoneyPool.current_balance) %>
+</h3>
+
+<%= form_with url: manual_adjust_current_balance_cents_money_pool_path, method: :post do |form| %>
+<p>
+  <%= form.label :value, 'Change Balance by Value: ' %>
+  <%= form.number_field :value %>
+</p>
+
+<p>
+  <%= form.submit %>
+</p>
+
+<% end %>

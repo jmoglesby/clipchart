@@ -18,9 +18,10 @@ class MoneyPool < ApplicationRecord
     money_pool.save
   end
 
-  def self.manual_adjust_current_balance_cents
-    @value = params[:value].to_i
-    money_pool.current_balance_in_cents += value
+  def self.manual_adjust_current_balance_cents(value)
+    @value = value.to_f
+    @amount_to_add_in_cents = @value * 100
+    money_pool.current_balance_in_cents += @amount_to_add_in_cents.to_i
     money_pool.save
   end
 
