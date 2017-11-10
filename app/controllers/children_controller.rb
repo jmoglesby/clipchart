@@ -82,6 +82,7 @@ class ChildrenController < ApplicationController
 
   def child_params
     params.require(:child).permit(:name, :goal, :color, :screentime)
+    # back-end 'screentime' is now called 'points' in the UI
   end
 
 end
